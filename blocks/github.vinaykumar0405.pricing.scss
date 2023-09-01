@@ -16,25 +16,25 @@
   max-width: 300px;
 
   &:hover {
-    background-color: $sta-primary; // Change the background color on hover
+    background-color: primary; // Change the background color on hover
   }
 
   .pricing-icon {
     font-size: 3rem;
-    color: $sta-primary;
+    color: primary;
     margin-bottom: 20px;
   }
 
   .pricing-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: $sta-primary;
+    color: primary;
     margin-bottom: 10px;
   }
 
   .pricing-price {
     font-size: 2rem;
-    color: $sta-primary;
+    color: primary;
     margin-bottom: 20px;
   }
 
@@ -44,7 +44,7 @@
 
     li {
       margin-bottom: 10px;
-      color: $sta-primary;
+      color: primary;
     }
   }
 
@@ -53,7 +53,7 @@
 
     a {
       display: inline-block;
-      background-color: $sta-primary;
+      background-color: primary;
       color: #fff;
       text-decoration: none;
       padding: 10px 20px;
