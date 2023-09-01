@@ -26,8 +26,7 @@
   {{ if in (slice "fab" "fas" "far" "fal") $pack }}
     {{ $pack_prefix = "fa" }}
   {{ end }}
-  <div class="col-12 col-sm-4">
-    <a href="{{ with .url }}{{ . }}{{ else }}#{{ end }}">
+  <div class="col-12 col-sm-4" data-href="{{ with .url }}{{ . }}{{ else }}#{{ end }}>
       {{ with .icon }}
       <div class="featurette-icon">
         {{- if eq $pack "emoji" -}}
@@ -42,7 +41,6 @@
       {{ end }}
       <div class="section-subheading">{{ .name | markdownify | emojify }}</div>
       {{ with .description }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
-    </a>
   </div>
   {{ end }}
 </div>
