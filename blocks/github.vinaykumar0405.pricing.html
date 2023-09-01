@@ -1,14 +1,40 @@
-{{/* My Custom Block */}}
+{{/* Pricing Block */}}
 
-{{/* Get variables */}}
-{{ $page := .wcPage }}
+{{/* Initialise */}}
 {{ $block := .wcBlock }}
+{{ $page := .wcPage }}
 
-{{/* Add your block layout below */}}
-{{/* Styles can be added to the SCSS file */}}
-{{/* Access custom front matter options via $block.Params  */}}
-{{/* E.g. mytext via $block.Params.mytext */}}
+<div class="row pricing">
+  {{ with $block.content.title }}
+  <div class="col-md-12 section-heading">
+    <h2>{{ . | markdownify | emojify }}</h2>
+    {{ if $block.content.subtitle }}<p>{{ $block.content.subtitle | markdownify | emojify }}</p>{{ end }}
+  </div>
+  {{ end }}
 
-<h2>{{$block.Title}}</h2>
-
-<p>{{$block.Content}}</p>
+  {{ range $block.content.items }}
+  <div class="col-12 col-sm-4">
+    <div class="pricing-card">
+      {{ with .icon }}
+      <div class="pricing-icon">
+        {{- if eq . "custom-icon" -}}
+          <!-- Add your custom icon code or image here -->
+        {{- else -}}
+          <i class="fas fa-{{ . }}"></i>
+        {{- end -}}
+      </div>
+      {{ end }}
+      <div class="pricing-title">{{ .name | markdownify | emojify }}</div>
+      <div class="pricing-price">{{ .price }}</div>
+      <ul class="pricing-features">
+        {{ range .features }}
+        <li>{{ . | markdownify | emojify }}</li>
+        {{ end }}
+      </ul>
+      <div class="pricing-cta">
+        <a href="{{ .cta.link }}" class="btn btn-primary">{{ .cta.text }}</a>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>
