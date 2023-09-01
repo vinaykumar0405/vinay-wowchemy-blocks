@@ -31,9 +31,9 @@
         <li>{{ . | markdownify | emojify }}</li>
         {{ end }}
       </ul>
-      <div class="pricing-cta">
-        <a href="{{ .cta.link }}" class="btn btn-primary">{{ .cta.text }}</a>
-      </div>
+      <p class="cta-btns">
+        <a href="{{ .cta.url }}" class="btn btn-primary btn-lg mb-md-1">{{ .cta.label}}</a>
+      </p>
     </div>
   </div>
   {{ end }}
