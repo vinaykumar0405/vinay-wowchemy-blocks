@@ -25,7 +25,7 @@
       </div>
       {{ end }}
       <div class="pricing-title">{{ .name | markdownify | emojify }}</div>
-      <div class="pricing-price">{{ .price }}</div>
+      <div class="pricing-price">{{ .price | markdownify}}</div>
       <div class="pricing-subtitle">{{ .description | markdownify | emojify }}</div>
       <ul class="pricing-features">
         {{ range .features }}
