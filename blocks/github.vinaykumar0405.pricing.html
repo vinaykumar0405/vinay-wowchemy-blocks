@@ -4,12 +4,10 @@
 {{ $block := .wcBlock }}
 {{ $page := .wcPage }}
 
-<div class="row pricing">
-  <h1>{{ with $block.content.title }}</h1>
-  <div class="col-md-12 section-heading">
-    <h2>{{ . | markdownify | emojify }}</h2>
+<div class="row pricing section-heading">
+  <h1 class="mb-0">{{ with $block.content.title }}</h1>
+    <p class="mt1">{{ . | markdownify | emojify }}</p>
     {{ if $block.content.subtitle }}<p>{{ $block.content.subtitle | markdownify | emojify }}</p>{{ end }}
-  </div>
   {{ end }}
 
   {{ range $block.content.items }}
