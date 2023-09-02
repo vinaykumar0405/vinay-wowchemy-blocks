@@ -23,7 +23,7 @@
       </div>
       {{ end }}
       <div class="pricing-title">{{ .name | markdownify | emojify }}</div>
-      <div class="pricing-price">{{ .price | markdownify}}<p class="mt-1">/per month</p></div>
+      <div class="pricing-price">{{ .price | markdownify}}</div>
       <div class="pricing-subtitle">{{ .description | markdownify | emojify }}</div>
       <ul class="pricing-features">
         {{ range .features }}
