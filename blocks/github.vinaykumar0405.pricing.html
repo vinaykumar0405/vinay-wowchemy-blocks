@@ -29,7 +29,10 @@
       <div class="pricing-subtitle">{{ .description | markdownify | emojify }}</div>
       <ul class="pricing-features">
         {{ range .features }}
-        <li>{{ . | markdownify | emojify }}</li>
+        <li>
+          <i class="fas fa-check"></i> <!-- Add the checkmark icon -->
+          {{ . | markdownify | emojify }}
+        </li>
         {{ end }}
       </ul>
       <p class="pricing-cta">
