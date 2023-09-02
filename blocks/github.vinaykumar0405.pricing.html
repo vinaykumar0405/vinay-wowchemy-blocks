@@ -5,7 +5,7 @@
 {{ $page := .wcPage }}
 
 <div class="row pricing">
-  {{ with $block.content.title }}
+  <h1>{{ with $block.content.title }}</h1>
   <div class="col-md-12 section-heading">
     <h2>{{ . | markdownify | emojify }}</h2>
     {{ if $block.content.subtitle }}<p>{{ $block.content.subtitle | markdownify | emojify }}</p>{{ end }}
