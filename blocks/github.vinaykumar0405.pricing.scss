@@ -1,4 +1,4 @@
-
+$primaryColor: #ffffff;
 
 
 /* Add your block style here */
@@ -11,7 +11,7 @@
 .pricing-card {
   background-color: #fff; // Default background color for pricing cards
   border: 3px solid;
-  border-color: .Site.Params.primary_color;
+  border-color: $primaryColor;
   border-radius: 5px;
   padding: 20px;
   text-align: center;
