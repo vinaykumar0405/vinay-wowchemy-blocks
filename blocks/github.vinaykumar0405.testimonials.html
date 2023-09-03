@@ -8,6 +8,8 @@
 {{ $hash_id := .wcIdentifier }}
 {{ $slide_count := len $block.content.slides }}
 
+<div class="carousel slide wg-slider" data-ride="carousel" data-interval="5000">
+  
 
 
 <!-- Carousel slides wrapper -->
@@ -93,3 +95,5 @@
   <span class="sr-only">Next</span>
 </a>
 {{ end }}
+
+</div>
