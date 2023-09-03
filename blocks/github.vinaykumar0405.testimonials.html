@@ -49,6 +49,7 @@
     <div class="d-flex w-100 h-100 justify-content-center align-items-center" style="{{$style_filter | safeCSS}}">
       {{/* To prevent control overlap, margins are based on $carousel-control-* in bootstrap-variables.scss */}}
       <div class="wg-hero dark container" style="margin-left: 6rem; margin-right: 6rem; text-align: {{$item.align | default "left"}};">
+        <i class= "carousel-control-next-icon fas fa-quote-left"></i>
           {{ with $item.content }}
           <p class="testimonial" style="{{if eq $item.align "center"}}margin: 0 auto 0 auto;{{else if eq $item.align "right"}}margin-left: auto; margin-right: 0{{end}}">
             {{ . | emojify | $page.RenderString }}
@@ -96,5 +97,5 @@
   <span class="sr-only">Next</span>
 </a>
 {{ end }}
-
+  
 </div>
