@@ -33,6 +33,9 @@
       </div>
     </div>
 
+    <p class="cta-btns">
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn {{if $bg.text_color_light}}btn-light{{else}}btn-primary{{end}} btn-lg mb-md-1">{{ if $block.content.cta.icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ $block.content.cta.icon }} pr-1" aria-hidden="true"></i>{{end}}{{ $block.content.cta.label | markdownify | emojify | safeHTML }}</a>
+    </p>
 
 
 
