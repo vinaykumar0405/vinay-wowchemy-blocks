@@ -19,7 +19,7 @@
           <div class="clients-wrapper">
             <ul class="clients">
               {{ range $block.content.clients }}
-              <li class="item" title="{{ .name }}">
+              <li class="item text-center" title="{{ .name }}">
                 {{- $image := resources.Get (printf "media/logo.png") -}}
                 <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
                 <span> {{.name}}</span>
