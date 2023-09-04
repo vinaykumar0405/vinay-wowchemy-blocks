@@ -1,1 +1,35 @@
+{{/* Databases Block */}}
 
+{{/* Initialise */}}
+{{ $block := .wcBlock }}
+{{ $page := .wcPage }}
+
+
+  <div class="row">
+    {{ with $block.content.title }}
+      <div class="col-md-12 section-heading text-center">
+        <h1>{{ . | markdownify | emojify }}</h1>
+        {{ if $block.content.subtitle }}<p>{{ $block.content.subtitle | markdownify | emojify }}</p>{{ end }}
+      </div>
+    {{ end }}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="databases-wrapper">
+            <ul class="databases">
+              {{ range $block.content.clients }}
+              <li class="item text-center" title="{{ .name }}">
+                {{- $image := resources.Get (printf "media/databases/%s" .image) -}}
+                <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
+<!--                 <span> {{.name}}</span> -->
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
