@@ -13,7 +13,7 @@
       </div>
     {{ end }}
 
-          <ul class="carousel customers slide"
+<!--           <ul class="carousel customers slide"
               data-items="{{ default 6 $block.content.items }}"
               data-autoplay="{{ default false $block.content.auto_play }}"
               data-slide-speed="{{ default 2000 $block.content.slide_speed }}"
@@ -36,7 +36,19 @@
               </div>
               {{ end }}
             </div>
-          </ul> 
+          </ul>  -->
+          <ul class="owl-carousel customers"
+              data-items="{{ default 6 $block.content.items }}"
+              data-autoplay="{{ default false $block.content.auto_play }}"
+              data-slide-speed="{{ default 2000 $block.content.slide_speed }}"
+              data-pagination-speed="{{ default 1000 $block.content.pagination_speed }}">
+              {{ range $block.content.clients }}
+              <li class="item" title="{{ .name }}">
+                  {{- $image := resources.Get (printf "media/logo.png") -}}
+                  <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
+              </li>
+              {{ end }}
+          </ul>
 
     </div>
 
