@@ -13,23 +13,29 @@
       </div>
     {{ end }}
 
-          <ul class="carousel customers"
+          <ul class="carousel customers slide"
               data-items="{{ default 6 $block.content.items }}"
               data-autoplay="{{ default false $block.content.auto_play }}"
               data-slide-speed="{{ default 2000 $block.content.slide_speed }}"
               data-pagination-speed="{{ default 1000 $block.content.pagination_speed }}">
+            <div class="carousel-inner">
               {{ range $block.content.clients }}
-              <li class="item carousel-item" title="{{ .name }}">
-                  {{ if .url }}
-                    <a href="{{ .url }}" target="_blank">
-                      <img src="{{ .image }}" alt="{{ .name }}" class="img-responsive" />
-                    </a>
-                  {{ else }}
-                    {{- $image := resources.Get (printf "media/logo.png") -}}
-                    <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
-                  {{ end }}
-              </li>
+              <div class="carousel-item
+                <div class="d-flex">
+                  <li class="item carousel-item" title="{{ .name }}">
+                      {{ if .url }}
+                        <a href="{{ .url }}" target="_blank">
+                          <img src="{{ .image }}" alt="{{ .name }}" class="img-responsive" />
+                        </a>
+                      {{ else }}
+                        {{- $image := resources.Get (printf "media/logo.png") -}}
+                        <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
+                      {{ end }}
+                  </li>
+                </div>
+              </div>
               {{ end }}
+            </div>
           </ul> 
 
     </div>
