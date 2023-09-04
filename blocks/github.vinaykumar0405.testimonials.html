@@ -57,7 +57,9 @@
           <div class="row">
             <div class="col-md-2 text-center">
               {{- $image := resources.Get (printf "media/%s" $item.image) -}}
-              <img src="{{ $image.RelPermalink }}" alt="Testimonial Image" class="img-fluid testimonial-image">
+              <div class="circle">
+                <img src="{{ $image.RelPermalink }}" alt="Testimonial Image" class="img-fluid testimonial-image">
+              </div>
             </div>
             <div class="col-md-10">
               <!-- Name and Role -->
