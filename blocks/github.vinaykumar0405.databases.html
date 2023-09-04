@@ -21,7 +21,9 @@
               {{ range $block.content.clients }}
               <li class="database-item text-center" title="{{ .name }}">
                 {{- $image := resources.Get (printf "media/databases/%s" .image) -}}
-                <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="icon" />
+                <div class="circle">
+                  <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="icon" />
+                </div>
                 <!-- <span>{{ .name }}</span> -->
               </li>
               {{ end }}
@@ -30,6 +32,7 @@
         </div>
       </div>
     </div>
+
 
 
 
