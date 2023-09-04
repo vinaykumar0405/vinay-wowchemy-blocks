@@ -22,6 +22,7 @@
               <li class="item" title="{{ .name }}">
                 {{- $image := resources.Get (printf "media/logo.png") -}}
                 <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
+                <span> {{.name}}</span>
               </li>
               {{ end }}
             </ul>
