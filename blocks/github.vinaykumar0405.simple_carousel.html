@@ -13,14 +13,22 @@
       </div>
     {{ end }}
 
-    <ul class="clients">
-        {{ range $block.content.clients }}
-        <li class="item" title="{{ .name }}">
-            {{- $image := resources.Get (printf "media/logo.png") -}}
-            <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
-        </li>
-        {{ end }}
-    </ul>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="clients-wrapper">
+            <ul class="clients">
+              {{ range $block.content.clients }}
+              <li class="item" title="{{ .name }}">
+                {{- $image := resources.Get (printf "media/logo.png") -}}
+                <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+
+  </div>
 
