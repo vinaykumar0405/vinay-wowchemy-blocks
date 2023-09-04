@@ -42,10 +42,11 @@
     {{ else if in (slice "http" "https") $scheme }}
       {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
     {{ end }}
-    <p class="cta-btns">
-      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn {{if $bg.text_color_light}}btn-light{{else}}btn-primary{{end}} btn-lg mb-md-1">{{ $block.content.cta.label | markdownify | emojify | safeHTML }}</a>
-    </p>
-
+    <div class="text-center">
+      <p class="cta-btns">
+        <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn {{if $bg.text_color_light}}btn-light{{else}}btn-primary{{end}} btn-lg mb-md-1">{{ $block.content.cta.label | markdownify | emojify | safeHTML }}</a>
+      </p>
+    </div>
 
 
   </div>
