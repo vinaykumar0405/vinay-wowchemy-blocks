@@ -20,7 +20,7 @@
             <ul class="clients">
               {{ range $block.content.clients }}
               <li class="item text-center" title="{{ .name }}">
-                {{- $image := resources.Get (printf "media/clients/%s") .image-}}
+                {{- $image := resources.Get (printf "media/clients/%s" .image) -}}
                 <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
                 <span> {{.name}}</span>
               </li>
