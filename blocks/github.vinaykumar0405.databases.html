@@ -19,10 +19,10 @@
           <div class="databases-wrapper">
             <ul class="databases">
               {{ range $block.content.clients }}
-              <li class="item text-center" title="{{ .name }}">
+              <li class="database-item text-center" title="{{ .name }}">
                 {{- $image := resources.Get (printf "media/databases/%s" .image) -}}
-                <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
-<!--                 <span> {{.name}}</span> -->
+                <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="icon" />
+                <!-- <span>{{ .name }}</span> -->
               </li>
               {{ end }}
             </ul>
@@ -30,6 +30,7 @@
         </div>
       </div>
     </div>
+
 
 
   </div>
