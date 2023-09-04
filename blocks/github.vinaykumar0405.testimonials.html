@@ -10,7 +10,12 @@
 
 <div class="testimonials">
   
-
+{{ with $block.content.title }}
+  <div class="col-md-12 section-heading text-center">
+    <h1>{{ . | markdownify | emojify }}</h1>
+    {{ if $block.content.subtitle }}<p>{{ $block.content.subtitle | markdownify | emojify }}</p>{{ end }}
+  </div>
+{{ end }}
 
 <!-- Carousel slides wrapper -->
 <div class="carousel-inner">
