@@ -51,7 +51,7 @@
       <div class="wg-hero dark container" style="margin-left: 6rem; margin-right: 6rem; text-align: {{$item.align | default "left"}};">
           <div class="row">
             <div class="col-md-3">
-              {{- $svg_icon := resources.Get (printf "media/%s.jpg" .image) -}}
+              {{- $svg_icon := resources.Get (printf "media/avatar.jpg") -}}
               {{ if not $svg_icon }}{{ errorf "Brand logo not found at `assets/media/icons/brands/%s.svg`" .company_logo }}{{end}}
          
               <!-- Image -->
