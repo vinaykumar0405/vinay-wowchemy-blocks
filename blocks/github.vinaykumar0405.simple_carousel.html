@@ -13,11 +13,11 @@
       </div>
     {{ end }}
 
-<!--           <ul class="owl-carousel customers"
-              data-items="{{ default 6 site.Params.CarouselCustomers.items }}"
-              data-autoplay="{{ default false $block.auto_play }}"
+          <ul class="owl-carousel customers"
+              data-items="{{ default 6 $block.content.items }}"
+              data-autoplay="{{ default false $block.content.auto_play }}"
               data-slide-speed="{{ default 2000 $block.content.slide_speed }}"
-              data-pagination-speed="{{ default 1000 $block.pagination_speed }}">
+              data-pagination-speed="{{ default 1000 $block.content.pagination_speed }}">
               {{ range $block.content.clients }}
               <li class="item" title="{{ .name }}">
                   {{ if .url }}
@@ -25,11 +25,12 @@
                       <img src="{{ .image }}" alt="{{ .name }}" class="img-responsive" />
                     </a>
                   {{ else }}
-                    <img src="{{ .image }}" alt="{{ .name }}" class="img-responsive" />
+                    {{- $image := resources.Get (printf "media/logo.png") -}}
+                    <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-responsive" />
                   {{ end }}
               </li>
               {{ end }}
-          </ul>  -->
+          </ul> 
 
     </div>
 
