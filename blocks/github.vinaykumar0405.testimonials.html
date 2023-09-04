@@ -51,9 +51,12 @@
       <div class="wg-hero dark container" style="margin-left: 6rem; margin-right: 6rem; text-align: {{$item.align | default "left"}};">
           <div class="row">
             <div class="col-md-3">
+              {{- $svg_icon := resources.Get (printf "media/%s.jpg" .image) -}}
+              {{ if not $svg_icon }}{{ errorf "Brand logo not found at `assets/media/icons/brands/%s.svg`" .company_logo }}{{end}}
+         
               <!-- Image -->
               {{- $image := resources.Get (path.Join "media" $item.image) -}}
-              <img src="{{ $image.RelPermalink }}" alt="Testimonial Image" class="img-fluid">
+              <img src="{{ $svg_icon.RelPermalink }}" alt="Testimonial Image" class="img-fluid">
             </div>
             <div class="col-md-9">
               <!-- Name and Role -->
