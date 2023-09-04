@@ -7,7 +7,7 @@
 
   <div class="row">
     {{ with $block.content.title }}
-      <div class="col-md-12 section-heading">
+      <div class="col-md-12 section-heading text-center">
         <h1>{{ . | markdownify | emojify }}</h1>
         {{ if $block.content.subtitle }}<p>{{ $block.content.subtitle | markdownify | emojify }}</p>{{ end }}
       </div>
