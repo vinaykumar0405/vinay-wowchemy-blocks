@@ -1,0 +1,30 @@
+{{/* Custom Solutions Block */}}
+{{/* Initialise */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+<div class="row custom-solutions">
+  {{ with $block.content.title }}
+  <div class="col-md-12 section-heading">
+    <h1>{{ . | markdownify | emojify }}</h1>
+    {{ if $block.content.subtitle }}<p>{{ $block.content.subtitle | markdownify | emojify }}</p>{{ end }}
+  </div>
+  {{ end }}
+
+  {{ range $block.content.items }}
+  <div class="col-12 col-sm-6">
+    <div class="custom-solution">
+      {{ with .image }}
+      <img src="{{ . }}" alt="{{ .Alt }}" class="img-fluid">
+      {{ end }}
+      <h2>{{ .title | markdownify | emojify }}</h2>
+      {{ with .subtitle }}
+      <h3>{{ . | markdownify | emojify }}</h3>
+      {{ end }}
+      {{ with .text }}
+      <p>{{ . | markdownify | emojify }}</p>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>
