@@ -14,9 +14,8 @@
   {{ range $block.content.items }}
   <div class="col-12 col-sm-6">
     <div class="custom-solution">
-      {{ with .image }}
-      <img src="{{ . }}" alt="{{ .Alt }}" class="img-fluid">
-      {{ end }}
+      {{- $image := resources.Get (printf "media/solutions/%s" .image) -}}
+      <img src="{{ $image.RelPermalink }}" alt="{{ .name }}" class="img-fluid"/>
       <h2>{{ .title | markdownify | emojify }}</h2>
       {{ with .subtitle }}
       <h3>{{ . | markdownify | emojify }}</h3>
