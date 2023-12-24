@@ -4,39 +4,40 @@
 {{ $block := .wcBlock }}
 {{ $page := .wcPage }}
 
-<div class="row pricing section-heading">
+<div class="row section-heading">
   <h1 class="mb-0">{{ with $block.content.title }}
     {{ . | markdownify | emojify }}</h1>
     {{ if $block.content.subtitle }}<p class="mt-1">{{ $block.content.subtitle | markdownify | emojify }}</p>{{ end }}
   {{ end }}
-
+  <div class="pricing">
   {{ range $block.content.items }}
-  <div class="col-12 col-sm-4">
-    <div class="pricing-card">
-      {{ with .icon }}
-      <div class="pricing-icon">
-        {{- if eq . "custom-icon" -}}
-          <!-- Add your custom icon code or image here -->
-        {{- else -}}
-          <i class="fas fa-{{ . }}"></i>
-        {{- end -}}
-      </div>
-      {{ end }}
-      <div class="pricing-title">{{ .name | markdownify | emojify }}</div>
-      <div class="pricing-price">{{ .price | markdownify}}</div>
-      <div class="pricing-subtitle">{{ .description | markdownify | emojify }}</div>
-      <ul class="pricing-features">
-        {{ range .features }}
-        <li>
-          <i class="fas fa-check"></i> <!-- Add the checkmark icon -->
-          {{ . | markdownify | emojify }}
-        </li>
+    <div class="col-12 col-sm-4">
+      <div class="pricing-card">
+        {{ with .icon }}
+        <div class="pricing-icon">
+          {{- if eq . "custom-icon" -}}
+            <!-- Add your custom icon code or image here -->
+          {{- else -}}
+            <i class="fas fa-{{ . }}"></i>
+          {{- end -}}
+        </div>
         {{ end }}
-      </ul>
-      <p class="pricing-cta">
-        <a href="{{ .cta.url }}" class="btn btn-primary btn-lg mb-md-1">{{ .cta.label}}</a>
-      </p>
-    </div>
-  </div>
+        <div class="pricing-title">{{ .name | markdownify | emojify }}</div>
+        <div class="pricing-price">{{ .price | markdownify}}</div>
+        <div class="pricing-subtitle">{{ .description | markdownify | emojify }}</div>
+        <ul class="pricing-features">
+          {{ range .features }}
+          <li>
+            <i class="fas fa-check"></i> <!-- Add the checkmark icon -->
+            {{ . | markdownify | emojify }}
+          </li>
+          {{ end }}
+        </ul>
+        <p class="pricing-cta">
+          <a href="{{ .cta.url }}" class="btn btn-primary btn-lg mb-md-1">{{ .cta.label}}</a>
+        </p>
+      </div>
+   </div>
   {{ end }}
+  </div>
 </div>
